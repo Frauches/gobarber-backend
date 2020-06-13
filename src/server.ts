@@ -3,9 +3,9 @@ import 'express-async-errors';
 import 'reflect-metadata';
 import cors from 'cors';
 import uploadConfig from './config/upload';
-import './database';
-import AppError from './errors/AppError';
-import routes from './routes';
+import './shared/database';
+import AppError from './shared/errors/AppError';
+import routes from './shared/routes';
 
 const app = express();
 
