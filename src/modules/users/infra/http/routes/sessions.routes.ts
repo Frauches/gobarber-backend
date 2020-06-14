@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import CreateSessionService from '../../modules/users/services/CreateSessionService';
+import CreateSessionService from '@modules/users/services/AuthenticateUserService';
 
 const sessionsRouter = Router();
 
