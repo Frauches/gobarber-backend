@@ -5,7 +5,6 @@ import AppointmentsRepository from '@modules/appointments/infra/typeorm/reposito
 import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
 
 const appointmentRouter = Router();
-const appointmentsRepository = new AppointmentsRepository();
 
 appointmentRouter.use(ensureAuthenticated);
 
@@ -19,7 +18,7 @@ appointmentRouter.use(ensureAuthenticated);
 appointmentRouter.post('/', async (request: Request, response: Response) => {
   const { provider_id, date } = request.body;
   const parsedDate = parseISO(date);
-
+  const appointmentsRepository = new AppointmentsRepository();
   const createAppointmentService = new CreateAppointmentService(
     appointmentsRepository,
   );

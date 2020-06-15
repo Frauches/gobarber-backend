@@ -5,11 +5,11 @@
   "username": "postgres",
   "password": "master",
   "database": "gostack_gobarber",
-  "entities": ["./src/modules/**/entities/*.ts"],
+  "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
   "migrations": [
-    "./src/database/migrations/*.ts"
+    "./src/shared/infra/typeorm/migrations/*.ts"
   ],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }
