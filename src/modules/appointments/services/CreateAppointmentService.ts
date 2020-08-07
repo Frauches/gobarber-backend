@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import AppError from '@shared/errors/AppError';
 import { startOfHour } from 'date-fns';
