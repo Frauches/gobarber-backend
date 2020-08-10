@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import AppError from '@shared/errors/AppError';
 import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
