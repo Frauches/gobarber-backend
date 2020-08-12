@@ -1,9 +1,6 @@
-import uploadConfig from '@config/upload';
-import AppError from '@shared/errors/AppError';
-import fs from 'fs';
-import path from 'path';
-import { inject, injectable } from 'tsyringe';
 import IStorageProvider from '@shared/container/Provider/StorageProvider/models/IStorageProvider';
+import AppError from '@shared/errors/AppError';
+import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
 import IUsersRepository from '../repositories/IUsersRepository';
 
