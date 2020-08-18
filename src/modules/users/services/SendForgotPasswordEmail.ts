@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 import IUsersRepository from '../repositories/IUsersRepository';
-import IMailProvider from '../../../shared/container/Provider/MailProvider/models/IMailProvider';
+import IMailProvider from '../../../shared/container/providers/MailProvider/models/IMailProvider';
 import AppError from '../../../shared/errors/AppError';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
 
@@ -28,11 +28,11 @@ class SendForgotPasswordEmailService {
       throw new AppError('User is not registered', 404);
     }
 
-    await this.userTokensRepository.generate(user.id);
+    const { token } = await this.userTokensRepository.generate(user.id);
 
     await this.mailProvider.sendMail(
       email,
-      'Corpo do email de recuperação de senha',
+      `Corpo do email de recuperação de senha: ${token}`,
     );
   }
 }
